@@ -1,5 +1,7 @@
 package day1;
 
+import java.sql.SQLOutput;
+
 public class ExamLoop2 {
     public static void main(String[] args) {
 
@@ -108,7 +110,7 @@ public class ExamLoop2 {
 
     */
 
-        String star = " ";
+        String star = "";
         int high = 3;
         int count = 1;
 
@@ -118,7 +120,7 @@ public class ExamLoop2 {
             count++;
         }
 
-        star = " ";
+        star = "";
         high = 5;
         count = 1;
         System.out.println("\n높이 : "+ high);
@@ -127,7 +129,7 @@ public class ExamLoop2 {
             count++;
         }
 
-        star = " ";
+        star = "";
         high = 7;
         count = 1;
         System.out.println("\n높이 : "+ high);
@@ -178,15 +180,223 @@ public class ExamLoop2 {
     */
 
 
-        String star2 = " ";
-        int high2 = 3;
-        int count2 = 1;
+//        String star2 = " ";
+//        int high2 = 3;
+//        int count2 = 1;
+//
+//        System.out.println("높이 : "+ high2);
+//        while(count2<=high2){
+//            System.out.println(star2 = star2 - " " + "*");
+//            count2++;
+//        }
 
-        System.out.println("높이 : "+ high2);
-        while(count2<=high2){
-            System.out.println(star2 = star2 + "\n*");
-            count2++;
+//        star2 = " ";
+//        String blank = "   ";
+//        high2 = 3;
+
+
+//        for (int blank_count = 1; blank_count<= high2; blank_count++){
+//            for (int star_count = 1; star_count <= high2; star_count++) {
+//                blank = blank + " ";
+//                star2 = star2 + "*" ;
+//                System.out.println(star2 = blank + star2);
+//            }
+//        }
+
+
+//        for (int star_count = 1; star_count <= high2; star_count++) {
+//            for (int blank_count = 3; blank_count<= high2; blank_count--){
+//                blank =  " ";
+//            }
+//            star2 = star2 + "*" ;
+//            System.out.println(star2 = blank + star2);
+//        }
+
+
+
+//        String Square = "ㅁㅁㅁ";
+//        for (int hh = 1; hh <=-3; hh--){
+//            System.out.println(Square = Square - "ㅁ");
+//        }
+//
+        String Square = "ㅁ";
+//        for (int hh = 1; hh <=3; hh++){
+//            System.out.print(Square);
+//        }
+//        System.out.println(" ");
+//        Square = "ㅁ";
+//        for (int hh = 1; hh <=2; hh++){
+//            System.out.print(Square);
+//        }
+//        System.out.println(" ");
+//        Square = "ㅁ";
+//        for (int hh = 1; hh <=1; hh++){
+//            System.out.print(Square);
+//        }
+//        System.out.println(" ");
+//
+//        Square = "ㅁ";
+//        for (int hh = 1; hh <=3; hh++){
+//            System.out.print(Square);
+//        }
+//        System.out.println(" ");
+//        Square = "ㅁ";
+//        for (int hh = 1; hh <=2; hh++){
+//            System.out.print(Square);
+//        }
+//        System.out.println(" ");
+//        Square = "ㅁ";
+//        for (int hh = 1; hh <=1; hh++){
+//            System.out.print(Square);
+//        }
+//        System.out.println(" ");
+//
+//        Square = "ㅁ";
+//        for (int hh = 1; hh <=3; hh++){
+//            System.out.print(Square);
+//        }
+//        System.out.println(" ");
+
+
+//        Square = "ㅁ";
+//        for (int aa = 3; aa >= 1; aa--){
+//            for (int hh = 1; hh <=aa; hh++){
+//                System.out.print(Square);
+//            }
+//            System.out.println(" ");
+//        }
+        // ㅁ는 반복의 수만큼 출력이 된다 ㅁ가 3번이면 ㅁㅁㅁ, ㅁ가 2번이면 ㅁㅁ
+        // ㅁ의 반복의 수를 변수를 주어서 3->1로 내려가게 반복을 주었다
+
+//
+//        String Star = " ";
+//
+//        for (int h = 1; h <=3; h++){
+//            System.out.println(Star = Star + "*");
+//        }
+
+//        Square = "ㅁ";
+//        String Star = " ";
+
+
+//        for (int aa = 3; aa >= 1; aa--){
+//            for (int hh = 1; hh <=aa; hh++){
+//                System.out.print(Square);
+//            }
+//            for (int h = 3; aa <= h; h--){ >> 이 조건이 aa 조건이랑 같다는 것을 알게됨
+//                System.out.println(Star = Star + "*");
+//            }
+//        }
+//
+//
+//
+//        Square = "ㅁ";
+//        String Star = " ";
+//
+//
+//        for (int aa = 3; aa >= 1; aa--){
+//            for (int hh = 1; hh <=aa; hh++){
+//                System.out.print(Square);
+//            }
+//
+//            System.out.println(Star = Star + "*");
+//
+//        }
+
+
+
+        String blank = " ";
+        String Star2 = "";
+
+
+        for (int aa = 8; aa >= 1; aa--){
+            for (int hh = 1; hh <=aa; hh++){
+                System.out.print(blank);
+            }
+            System.out.println(Star2 = Star2 + "*");
         }
+
+
+
+        // " " 공백 풀방일때, 별이 없고
+
+
+
+        // 3각형 힌트
+        // 규칙성을 찾을 것
+        // 공백, 별 > 공백도 그려야함 > System.out.println(" ");
+
+        System.out.println("\n\n 문제 5 \n\n");
+
+        String Star = "";
+
+        int bb = 3;
+
+        for (int hhh = 1; hhh <=bb; hhh++){
+            System.out.println(Star = Star + "*");
+        }
+        for (int aa = bb-1; aa >= 1; aa--) {
+            for (int hh = 1; hh <= aa; hh++) {
+                System.out.print("*");
+            }
+            System.out.println( );
+        }
+
+        // 출력
+        /*
+
+
+         *
+         **
+         *
+
+
+         */
+
+
+        // 출력
+        /*
+
+
+         *
+         **
+         ***
+         **
+         *
+
+
+         */
+
+
+        // 출력
+        /*
+
+
+         *
+         **
+         ***
+         ***
+         **
+         *
+
+
+         */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

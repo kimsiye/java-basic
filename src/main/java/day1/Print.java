@@ -35,6 +35,7 @@ public class Print {
         // 숫자 + 숫자 => 더하기 산술 연산
         // 문자 + 숫자 => 숫자가 문자가 되어서 이어붙이기
         // 문자 + (숫자연산)
+        System.out.println(100 + 200 == (100 + 200));
         System.out.println("100 + 200 = 100 + 200");
         System.out.println("100 + 200 = "+ 300);
         System.out.println("100 + 200 ="+ 100 + 200);
