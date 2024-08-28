@@ -76,6 +76,8 @@ public class Array {
 
         // 문자 배열
         String[] arr6 = {"apple", "banana","orange"};
+
+        // 논리 배열
         boolean[] arr7 = {true};
 
 
