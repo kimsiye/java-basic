@@ -7,6 +7,7 @@ package day3;
 // 카멜표길법 : 단어의 앞에만 대문자로 만듬
 // 함수나 변수는 소문자로 시작함
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class NameApp3 {
@@ -60,11 +61,16 @@ public class NameApp3 {
         int age;
 
         // 받을 배열 길이 저장
-        String[] nameArr = new String[10];
-        int[] ageArr = new int[10];
+        // 배열
+        //String[] nameArr = new String[10];
+        //int[] ageArr = new int[10];
         // 사용자가 입력하기 입력전가지 모를때 갯수 임의로 넣기
         // []에는 배열을 얼마나 담을건지 숫자를 넣어야 함
         // 비어있을 때 숫자는 0, 문자는 null
+
+        // ArrayList
+        ArrayList<String> nameArr = new ArrayList<>();
+        ArrayList<Integer> ageArr = new ArrayList<>();
 
 
         while (true) {
@@ -85,16 +91,16 @@ public class NameApp3 {
 
                 // 입력값 저장 ** 중요
 
-                nameArr[count] = name;
-                ageArr[count] = age;
-                System.out.println(nameArr[count] + "이름을 저장했습니다.");
+                nameArr.add(name);
+                ageArr.add(age);
+                System.out.println(nameArr.get(count) + "이름을 저장했습니다.");
                 count++;
 
             } else if (commend.equals("list")) {
                 System.out.println("\n===== 이름, 나이 목록 ======");
                 output = 0;
                 while (output <= count - 1) {
-                    System.out.println((output + 1) + ". " + nameArr[output]+", "+ageArr[output]);
+                    System.out.println((output + 1) + ". " + nameArr.get(output)+", "+ageArr.get(output));
                     output++;
                 }
                 System.out.println("=====================");
