@@ -1,6 +1,7 @@
-package day5.VendingMachineApp;
+package day5.VendingMachineApp2.VendingMachineApp;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Vending {
@@ -36,16 +37,23 @@ public class Vending {
         add("사이다");
         add("커피");
     }};
-    ArrayList<Integer> price = new ArrayList<>() {{
-        add(1000);
-        add(1200);
-        add(800);
-    }};
+//    ArrayList<Integer> price = new ArrayList<>() {{
+//        add(1000);
+//        add(1200);
+//        add(800);
+//    }};
+    ArrayList<Integer> price = new ArrayList<>(List.of(1000, 1200, 800));;
     ArrayList<Integer> count = new ArrayList<>() {{
         add(1);
         add(1);
         add(2);
     }};
+    // new ArrayList<>() {{}} 실행되고 변수에 저장된다
+
+    //Arraylist 하나만
+
+
+
 
 
     // 음료 목록 확인

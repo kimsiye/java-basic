@@ -1,4 +1,4 @@
-package day5.VendingMachineApp;
+package day5.VendingMachineApp2.VendingMachineApp;
 
 import java.util.Scanner;
 
