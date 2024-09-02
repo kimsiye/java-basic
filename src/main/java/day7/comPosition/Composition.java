@@ -14,7 +14,12 @@ public class Composition {
     }
 }
 
-class Kildong{
+class JavaDevelop{
+    void java(){
+
+    }
+}
+class Kildong extends JavaDevelop{
     public void java(){
         System.out.println("자바 22버전 프로그래밍");
     }
@@ -23,7 +28,7 @@ class Kildong{
 //    }
 
 }
-class Kilsoon{
+class Kilsoon {
 //    public void java(){
 //        System.out.println("자바 22버전 프로그래밍");
 //    }
@@ -41,7 +46,7 @@ class Kilsoon{
 // 자바 프로그램 업데이트 > 길동이가 배우고 길순이가 길동이 자바를 사용
 // 다른 객체의 도움을 받아서 사용하는 것을 컴포지션이라고 함
 
-class Jinee {
+class Jinee  extends JavaDevelop{
     public void java() {
         System.out.println("아주 뛰어난 자바 프로그래밍");
     }
