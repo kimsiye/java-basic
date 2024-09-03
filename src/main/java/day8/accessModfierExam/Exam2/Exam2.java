@@ -23,6 +23,7 @@ class Person {
     public void setId(int id){
         this.id = id;
     }
+    //int는 숫자 외에 있으면 안되고 숫자만 리턴 할 수 있어야함
     public int getId(){
         return id;
     }
