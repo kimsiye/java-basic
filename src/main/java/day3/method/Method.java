@@ -1,6 +1,6 @@
 package day3.method;
 
-// Function
+// TxtBdApp
 public class Method {
     public static void main(String[] args) {
         // 사람의 정보를 저장

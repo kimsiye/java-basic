@@ -4,14 +4,38 @@ public class Post {
     private int id;
     private String title;
     private String body;
+    private String createDate;
+    private int hit;
 
     // 생성자 이용
 
 
-    public Post(int id, String title, String body) {
+    public Post(int id, String title, String body, String createDate, int hit) {
         this.id = id;
         this.title = title;
         this.body = body;
+        this.createDate = createDate;
+        this.hit = hit;
+    }
+
+    public void increaseHif(){
+        this.hit++;
+    }
+
+    public int getHit() {
+        return hit;
+    }
+
+    public void setHit(int hit) {
+        this.hit = hit;
+    }
+
+    public String getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(String createDate) {
+        this.createDate = createDate;
     }
 
     public int getId() {
