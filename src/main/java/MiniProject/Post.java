@@ -29,15 +29,21 @@ public class Post {
 
     }
 
-    public void commentReturn ( int id){
-        if (commentList.getId() == id){
-            System.out.printf("댓글내용 : %s\n",commentList.getContent());
-            System.out.printf("댓글 작성일 : %s\n",commentList.getCurrentDateTime());
-            judgment = false;
-        }
-        System.out.println("====================");
-        if(judgment == true){
-            System.out.println("검색 결과가 없습니다.");
+    public  void  commentReturn ( ){
+        //return commentList ;
+
+        if(commentList.isEmpty()) {
+            return;
+        }else{
+            System.out.println("======== 댓글 ========");
+            for (Comment commentReturn : commentList) {
+                if (this.id == id) {
+                    System.out.printf("댓글내용 : %s\n", commentReturn.getContent());
+                    System.out.printf("댓글 작성일 : %s\n", commentReturn.getFormattedDateTime());
+                    System.out.println("====================");
+                }
+            }
+
         }
     }
 
@@ -105,46 +111,7 @@ public class Post {
 
 
 
- // post에 댓글 배열을 만들고 댓글 객체를 만들어서 댓글 배열에 담은 다음 일괄 출력
+    // post에 댓글 배열을 만들고 댓글 객체를 만들어서 댓글 배열에 담은 다음 일괄 출력
 
 }
 
-class Comment {
-    private int id;
-    private String content;
-    private LocalDateTime currentDateTime;
-
-    public Comment(int id, String content, LocalDateTime currentDateTime){
-        this.id = id;
-        this.content = content;
-        this.currentDateTime = currentDateTime;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-    public LocalDateTime getCurrentDateTime() {
-        return currentDateTime;
-    }
-
-    public void setCurrentDateTime(LocalDateTime currentDateTime) {
-        this.currentDateTime = currentDateTime;
-    }
-
-    public String getFormattedDateTime() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyy-MM-dd HH:mm:ss");
-        return currentDateTime.format(formatter);
-    }
-}

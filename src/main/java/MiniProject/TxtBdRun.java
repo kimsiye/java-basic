@@ -9,7 +9,7 @@ public class TxtBdRun {
 
         // equals() 문자열 같은지 확인
         while (true) {
-            System.out.println("기능 : exit, add, list, update, delete, detail, search ");
+            System.out.println("기능 : exit, add, list, update, delete, detail, search, signup");
             System.out.print("명령어 입력 : ");
             String command = sc.nextLine();
 
@@ -30,7 +30,9 @@ public class TxtBdRun {
                 TxtBdAppRun.detail();
             }else if(command.equals("search")) {
                 TxtBdAppRun.search();
-            }
+            }//else if(command.equals("signup"){
+
+            //}
 
         }
 

@@ -1,4 +1,4 @@
-package MiniAnswer;
+package MiniAnswer.Post;
 
 public class Post {
     private int id;
