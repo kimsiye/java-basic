@@ -39,7 +39,7 @@ class Comment {
     }
 
     public String getFormattedDateTime() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyy-MM-dd HH:mm:ss");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         return currentDateTime.format(formatter);
     }
 }

@@ -16,6 +16,7 @@ public class VariableScope {
         if(true){
             // 다른영역이지만 하위 영역이기에 변수의 영향을 받음
             System.out.println(a);
+            int c = 0;
         }
 
         {

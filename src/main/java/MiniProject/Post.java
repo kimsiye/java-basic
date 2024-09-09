@@ -12,8 +12,9 @@ public class Post {
     private String name;
     private String body;
     private LocalDateTime currentDateTime;
+    private String nickName;
     private int views = 0;
-    int lastestId  = 1 ;
+    private int lastestId  = 1 ;
 
     Scanner sc = new Scanner(System.in);
     // 댓글 배열
@@ -51,16 +52,33 @@ public class Post {
 
     // 생성자
     public Post(int id, String name, String body, LocalDateTime currentDateTime,
-                int views){
+                int views, String nickName){
         this.id = id;
         this.name = name;
         this.body = body;
         this.currentDateTime = currentDateTime;
         this.views = views;
+        this.nickName = nickName;
     }
 
 
     // getter setter
+
+    public int getLastestId() {
+        return lastestId;
+    }
+
+    public void setLastestId(int lastestId) {
+        this.lastestId = lastestId;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
 
     public int getViews() {
         return views;
