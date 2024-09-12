@@ -7,6 +7,10 @@ public class Post {
     private String nowDateTime;
     private int view = 1;
 
+    // 생성자 여러개 만들 수 있다. 단, 매개변수 모양이 달라야함 => 생성자 오버로딩
+    public Post() { //json은 객체를 받을 때 아무것도 없는 생성자로 받는 걸로 구현되어 있음..
+    }
+
     public Post(int id, String title, String content, String nowDateTime) {
         this.id = id;
         this.title = title;
