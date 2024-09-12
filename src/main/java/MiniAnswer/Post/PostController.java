@@ -48,6 +48,7 @@ public class PostController {
 
     public void detail() {
         System.out.println("상세보기 할 게시물 번호");
+
         int targetId = Integer.parseInt(sc.nextLine());
 
         Post post = postRepository.findPostById(targetId);
