@@ -2,7 +2,6 @@ package MiniProject;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class TxtBdApp {
@@ -13,7 +12,6 @@ public class TxtBdApp {
     ArrayList<User> UsersList = new ArrayList<>();
     User loginUser;
 
-    //Post post = new Post();
 
     int lastestId = 1;
     boolean userLogin;
