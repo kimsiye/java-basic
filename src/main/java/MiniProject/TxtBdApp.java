@@ -8,7 +8,7 @@ public class TxtBdApp {
 
     Scanner sc = new Scanner(System.in);
 
-    ArrayList<Post> PostsList = new ArrayList<>();
+    PostRepository postRepository = new PostRepository();
     ArrayList<User> UsersList = new ArrayList<>();
     User loginUser;
 
@@ -20,9 +20,9 @@ public class TxtBdApp {
         Post test1 = new Post(lastestId, "a 안녕하세요 반갑습니다. 자바 공부중이에요.", "내용모름", LocalDateTime.now(), 1, "이순신");
         Post test2 = new Post(lastestId = lastestId + 1, "a 자바 질문좀 할게요~", "내용모름", LocalDateTime.now(), 1, "홍길동");
         Post test3 = new Post(lastestId = lastestId + 1, "b 정처기 따야되나요?", "내용모름", LocalDateTime.now(), 1, "aaa");
-        PostsList.add(test1);
-        PostsList.add(test2);
-        PostsList.add(test3);
+        postRepository.save(test1);
+        postRepository.save(test2);
+        postRepository.save(test3);
         lastestId++;
 
     }
@@ -43,7 +43,7 @@ public class TxtBdApp {
         }
         System.out.println("게시물이 등록되었습니다.");
         Post listMake = new Post(lastestId, boardName, boardContent, LocalDateTime.now(), 1, printNickname);
-        PostsList.add(listMake);
+        postRepository.save(listMake);
         listMake.setCurrentDateTime(LocalDateTime.now());
 
         lastestId++;
@@ -52,15 +52,11 @@ public class TxtBdApp {
     }
 
 
-
     public void list() {
-//
-
-        for (int i = 0; i < PostsList.size(); i++) {
-            Post in = PostsList.get(i);
+        for (Post post : postRepository.getPostsArr()) {
             System.out.println("====================");
-            System.out.printf("번호 : %s \n", in.getId());
-            System.out.printf("제목 : %s \n", in.getName());
+            System.out.printf("번호 : %s \n", post.getId());
+            System.out.printf("제목 : %s \n", post.getName());
         }
         System.out.println("====================");
     }
@@ -72,39 +68,37 @@ public class TxtBdApp {
     }
 
 
-
     public void delete() {
         // 번호가 바뀌면 안됨 하지만 ArrayList에서 당겨진다
         // 바뀌지 않는 식별용 넘버가 필요함
 
         System.out.print("삭제할 게시물 번호 : ");
-        int selNum = Integer.parseInt(sc.nextLine()) - 1;
-        if (selNum < 0 || selNum >= PostsList.size()) {
-            System.out.println("1 없는 게시물 번호입니다.");
-        } else {
-            PostsList.remove(selNum);
-            System.out.printf("%d번 개시물이 삭제되었습니다.\n", selNum + 1);
+        int selNum = Integer.parseInt(sc.nextLine());
+
+        Post postResult = findPostById(selNum);
+
+        if (postResult == null) {
+            System.out.println("없는 게시물 번호입니다.");
+        } else{
+            System.out.printf("%d번 개시물이 삭제되었습니다.\n", postResult.getId());
+            postRepository.remove(postResult);
         }
+
 
     }
 
     public void detail() {
         System.out.print("상세보기 할 게시물 번호를 입력해주세요 : ");
         int detailSelNum = Integer.parseInt(sc.nextLine());
-        boolean found = false;
-        for (Post posts : PostsList) {
-            if (posts.getId() == detailSelNum) {
-                detailPrint(posts);
-                commentChoice(posts);
-                found = true;
-            }
 
+        Post postResult = findPostById(detailSelNum);
+
+        if (postResult == null) {
+            System.out.println("없는 게시물 번호입니다.");
+        } else{
+            detailPrint(postResult);
+            commentChoice(postResult);
         }
-        if (found == false) {
-            System.out.println("2 없는 게시물 번호입니다.");
-        }
-
-
 
     }
 
@@ -218,7 +212,6 @@ public class TxtBdApp {
                 }
 
 
-
             } else if (funcSelNum == 4) {
 
                 if (loginUser.getUserNickname() == null) {
@@ -289,6 +282,15 @@ public class TxtBdApp {
 
         System.out.printf("%d번 개시물이 수정되었습니다.\n", post.getId());
 
+    }
+
+    public Post findPostById(int selNum) {
+        for (Post post : postRepository.getPostsArr()) {
+            if(post.getId() == selNum){
+                return post;
+            }
+        }
+        return null;
     }
 
 }

@@ -9,5 +9,11 @@ public class PostRepository {
       PostsList.add(post);
    }
 
+   public ArrayList<Post> getPostsArr(){
+      return PostsList;
+   }
 
+   public void remove (Post post){
+      PostsList.remove(post);
+   }
 }
