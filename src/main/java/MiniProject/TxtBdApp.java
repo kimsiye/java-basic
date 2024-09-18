@@ -45,15 +45,10 @@ public class TxtBdApp {
         Post listMake = new Post(lastestId, boardName, boardContent, LocalDateTime.now(), 1, printNickname);
         PostsList.add(listMake);
         listMake.setCurrentDateTime(LocalDateTime.now());
-        // 시간 설정 넘겨줌
 
         lastestId++;
 
-//        Post in =textBoardList.get(0);
-//        in.setName(boardName);
-//        in.setBody(boardContent);
-        // 반복되면 배열의 0번째에만 입력밗이 들어감
-        // 배열을 만들고 배열의 객체에 이름과 내용을 들어가게 세팅함
+
     }
 
 
