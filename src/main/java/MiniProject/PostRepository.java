@@ -16,4 +16,6 @@ public class PostRepository {
    public void remove (Post post){
       PostsList.remove(post);
    }
+
+
 }

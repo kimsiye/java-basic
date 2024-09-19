@@ -9,6 +9,8 @@ public class TxtBdApp {
     Scanner sc = new Scanner(System.in);
 
     PostRepository postRepository = new PostRepository();
+    PostView postView = new PostView();
+
     ArrayList<User> UsersList = new ArrayList<>();
     User loginUser;
 
@@ -96,7 +98,7 @@ public class TxtBdApp {
         if (postResult == null) {
             System.out.println("없는 게시물 번호입니다.");
         } else{
-            detailPrint(postResult);
+            postView.detailPrint(postResult);
             commentChoice(postResult);
         }
 
@@ -111,7 +113,7 @@ public class TxtBdApp {
         System.out.print("검색 키워드를 입력해주세요 : ");
         String searchName = sc.nextLine();
         boolean judgment = true;
-        for (Post posts : `PostsList) {
+        for (Post posts : postRepository.getPostsArr()) {
             if (posts.getName().contains(searchName)) {
                 System.out.println("====================");
                 System.out.printf("번호 : %s\n", posts.getId());
@@ -120,7 +122,7 @@ public class TxtBdApp {
             }
         }
         System.out.println("====================");
-        if (judgment == true) {
+        if (!judgment) {
             System.out.println("검색 결과가 없습니다.");
         }
 
@@ -161,20 +163,7 @@ public class TxtBdApp {
     }
 
     //-------------------------------------------
-    public void detailPrint(Post post) {
 
-        System.out.printf("======%d 게시물=======\n", post.getId());
-        System.out.printf("제목 : %s \n", post.getName());
-        System.out.printf("내용 : %s \n", post.getBody());
-        System.out.println("등록날짜 : " + post.getFormattedDateTime());
-        System.out.println("조회수 : " + post.getViews());
-        System.out.println("작성자 : " + post.getNickName());
-        System.out.println("====================");
-        post.setViews(1);
-        post.commentReturn();
-
-
-    }
 
     public void commentChoice(Post post) {
 
@@ -184,7 +173,7 @@ public class TxtBdApp {
             if (funcSelNum == 1) {
                 post.commentMake();
                 System.out.println("댓글이 성공적으로 등록되었습니다.");
-                detailPrint(post);
+                postView.detailPrint(post);
             } else if (funcSelNum == 2) {
                 System.out.println("[추천 기능]");
 
@@ -192,7 +181,7 @@ public class TxtBdApp {
 
                 if (loginUser.getUserNickname() == null) {
                     System.out.println("로그인 하세요. 자신의 게시물만 수정/삭제 할 수 있습니다.");
-                    detailPrint(post);
+                    postView.detailPrint(post);
                     return;
                 }
 
@@ -200,14 +189,14 @@ public class TxtBdApp {
 
                 if (loginUser.getUserNickname().equals(post.getNickName())) {
                     postChangeByDetail(post);
-                    detailPrint(post);
+                    postView.detailPrint(post);
                     found = true;
                 }
 
 
                 if (found == false) {
                     System.out.println("자신의 게시물만 수정/삭제 할 수 있습니다.");
-                    detailPrint(post);
+                    postView.detailPrint(post);
                     break;
                 }
 
@@ -216,14 +205,14 @@ public class TxtBdApp {
 
                 if (loginUser.getUserNickname() == null) {
                     System.out.println("로그인 하세요. 자신의 게시물만 수정/삭제 할 수 있습니다.");
-                    detailPrint(post);
+                    postView.detailPrint(post);
                     return;
                 }
 
                 boolean found = false;
 
                 if (loginUser.getUserNickname().equals(post.getNickName())) {
-                    PostsList.remove(post);
+                    postRepository.remove(post);
                     System.out.printf("%d번 개시물이 삭제되었습니다.\n", post.getId());
                     found = true;
                 }
@@ -231,7 +220,7 @@ public class TxtBdApp {
 
                 if (found == false) {
                     System.out.println("자신의 게시물만 수정/삭제 할 수 있습니다.");
-                    detailPrint(post);
+                    postView.detailPrint(post);
                     break;
                 }
 
@@ -247,7 +236,7 @@ public class TxtBdApp {
 
     public void postChange(int targetId) {
         boolean judgment = true;
-        for (Post posts : PostsList) {
+        for (Post posts : postRepository.getPostsArr()) {
             if (posts.getId() == targetId) {
                 System.out.print("제목 : ");
                 String changeName = sc.nextLine();

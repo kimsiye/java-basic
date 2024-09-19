@@ -1,3 +1,5 @@
+package New;
+
 public class NewTeacher {
     // https://cafe.daum.net/cometojava
 
