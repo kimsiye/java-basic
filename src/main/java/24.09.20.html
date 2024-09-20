@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+    <TITLE> 시맨틱 테스트 </TITLE>
+    <style>
+        header {
+            width:100%;
+            height: 15%;
+            text-align: center;
+            background-color : #f7edd2;
+        }
+        nav{
+            width: 15%;
+            height: 50%;
+            float: left;
+            background-color : #dce8fa;
+        }
+        section {
+
+            width: 70%;
+            height: 50%;
+            float: left;
+            background-color : #ddfadc;
+        }
+        table {
+            margin: 0 auto;
+        }
+        aside {
+            width: 15%;
+            height: 50%;
+            float: left;
+            background-color : #f7dcfa;
+        }
+        footer {
+            width: 100%;
+            height: 15%;
+            clear: both;
+            text-align: center;
+            background-color : #ffded4;
+        }
+
+
+
+    </style>
+
+</HEAD>
+
+<BODY>
+<header> 회원가입 페이지 </header>
+<nav> </nav>
+<section>
+    <article >
+
+
+        <form name = "frm" action = ".test0920_result.html" method="post">
+            <table border = 1>
+                <tr>
+                    <td>아이디</td>
+                    <td><input type = " text" name = "memberid" maxlength = "50" style = "width:300px;"></td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td><input type = "password" name = "memberPwd" maxlength = "50" style = "width:150px;"></td>
+                </tr>
+                <tr>
+                    <td>비밀번호 확인</td>
+                    <td><input type = "password" name = "memberPwd2" maxlength = "50" style = "width:150px;"></td>
+                </tr>
+                <tr>
+                    <td>이름</td>
+                    <td><input type = "text" name = "memberName" maxlength = "50" style = "width:300px;"></td>
+                </tr>
+                <tr>
+                    <td>이메일</td>
+                    <td><input type = "email" name = "memberEmail" maxlength = "50" style = "width:300px;"></td>
+                </tr>
+                <tr>
+                    <td>연락처</td>
+                    <td><input type = "tel" name = "memberPhone" maxlength = "50" style = "width:300px;"></td>
+                </tr>
+                <tr>
+                    <td>주소</td>
+                    <td>
+                        <select name = "memberAddr" style = "width:100px">
+                            <option value = "서울" > 서울 </option>
+                            <option value = "서울" selected > 대전 </option>
+                            <option value = "서울" > 부산 </option>
+                            <option value = "서울" > 인천 </option>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>성별</td>
+                    <td>
+                        <input type = "radio" name = "memberGender" value = "남성">남성
+                        <input type = "radio" name = "memberGender" value = "여성" checked>여성
+                    </td>
+                </tr>
+                <tr>
+                    <td>생년월일</td>
+                    <td>
+                        <input type = "date" name = "memberBirth" maxlength= "8" style = "width:150px;">
+                        예) 20240101
+                    </td>
+                </tr>
+                <tr>
+                    <td>취미</td>
+                    <td>
+                        <input type = "checkbox" name = "memberiHobby" value = "야구"> 야구
+                        <input type = "checkbox" name = "memberiHobby" value = "축구"> 축구
+                        <input type = "checkbox" name = "memberiHobby" value = "농구"> 농구
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan = "2" style = "text-align : center;">
+                        <input type = "submit" name = "btn" value = "회원정보 저장하기">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+	 <textarea>
+	 </textarea>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+    </article>
+</section>
+
+<aside>
+
+</aside>
+
+<footer>
+    made by hji
+</footer>
+
+</BODY>
+</HTML>
